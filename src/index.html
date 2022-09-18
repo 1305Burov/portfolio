@@ -6,7 +6,16 @@
  
 <body>
     @@include('html/header.html', {})
+    <div class="sticky">
+
+        @@include('html/hello.html', {})
+        @@include('html/about.html', {})
+    </div>
+    @@include('html/projects.html', {})
+    @@include('html/projects-list.html', {})
     @@include('html/footer.html', {})
+
+    
 
     <script src="js/app.min.js"></script>
 </body>

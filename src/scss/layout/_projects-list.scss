@@ -1,0 +1,61 @@
+.projects-list {
+    margin-top: 80px;
+    &__list {
+        display: grid;
+        margin-top: 35px;
+        gap: 35px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    &__project {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 32px 24px;
+        border: 2px solid $main_text;
+        border-radius: 20px;
+        list-style: none;
+        & .project {
+            &__name {
+                margin-bottom: 24px;
+                font-weight: 400;
+                font-size: 24px;
+            }
+            &__desc {
+                flex: 1 1 auto;
+                margin: 24px 0;
+            }
+            &__technologies {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 16px;
+                flex-wrap: wrap;
+                font-weight: 300;
+                list-style: none;
+            }
+            &__technology {
+            }
+        }
+    }
+    &__more {
+        display: block;
+        margin: 48px auto;
+        padding: 16px;
+        background-color: transparent;
+        border: 2px solid $main_text;
+        border-radius: 4px;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color .3s ease, color .3s ease ;
+        &:hover {
+            background-color: $main_text;
+            color: #fff;
+        }
+        &:active {
+            background-color: $text_active;
+        }        
+    }
+    &__hidden {
+        display: none;
+    }
+}

@@ -2,6 +2,12 @@
     .container {
         max-width: 1240px;
     }
+
+    .projects-list {
+        &__list {
+            grid-template-columns: repeat(3,1fr);
+        }
+    }
  }
 @media (max-width: 1199.98px) {  
     .container {
@@ -16,7 +22,20 @@
             margin-top: 64px;
         }
     }
+    .projects {
+        & .project {
+            
+            &__illustration {
+               max-width: 50%;
+               height: auto;
+               top: 50%;
+               transform: translateY(-50%);
+            }
+            
+        }
+    }
 
+   
  }
 @media (max-width: 991.98px) { 
     .container {
@@ -25,12 +44,45 @@
 
     .hello {
         margin-top: 20px;
+        padding-top: 20px;
 
         &__heading {
             font-size: 36px;
         }
         &__photo {
             max-height: 480px;
+        }
+    }
+
+    .projects {
+        & .project {
+            justify-content: center;
+            border-radius: 2px;
+            box-shadow: 0px 0px 12px 0px rgba(20, 20, 20, 0.1);
+
+            &__illustration {
+                max-width: 100%;
+                height: 100%;
+                opacity: .1;
+                box-shadow: none;
+            }
+            &__content {
+                max-width: 100%;
+                padding: 32px;
+            }
+            &__desc {
+                max-width: 65%;
+                padding: 0;
+                background-color: transparent;
+                color: $main_text;
+            }
+        }
+    }
+
+    .projects-list {
+        &__list {
+            grid-template-columns: repeat(2,1fr);
+            gap: 20px;
         }
     }
 }
@@ -44,20 +96,23 @@
             position: absolute;
             top: 100px;
             left: -100%;
-            width: 45%;
+            width: 100%;
             height: 100%;
-            padding: 20px;
-            background-color: rgb(220, 220, 220, .8);   
             color: #fff;
             transition: left .4s ease;
             & .nav {
                 &__list {
+                    padding: 20px;
+                    background-color: rgb(220, 220, 220, .9);
                     flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 24px;
                 }
            }
         }
         & .nav_active {
-            left: 0;
+            left: 0px;
         }
         & .burger {
             display: inline-flex;
@@ -65,6 +120,7 @@
     }
 
     .hello {
+        padding-top: 0px;
         &__wrapper {
             flex-direction: column;
         }
@@ -84,6 +140,7 @@
     }
 
     .about {
+        padding: 56px 0;
         &__wrapper {
             flex-direction: column;
         }
@@ -91,6 +148,40 @@
             order: -1;
             flex-direction: row;
             margin-bottom: 48px;
+        }
+    }
+
+    .projects {
+        padding: 32px 0;
+        & .project {
+            &__desc {
+                max-width: 100%;
+            }
+            &__technologies {
+                gap: 16px;
+                font-size: 14px;
+            }
+            &__illustration {
+                object-fit: cover;
+            }
+        }
+    }
+
+    .projects-list {
+        &__list {
+            grid-template-columns: repeat(1,1fr);
+            gap: 20px;
+        }
+        &__project .project__technologies {
+            gap: 12px;
+            font-size: 14px;
+        }
+    }
+
+    .footer {
+        &__wrapper {
+            flex-direction: column;
+            justify-content: space-evenly;
         }
     }
 }
@@ -111,11 +202,3 @@
 }
 
 
-@keyframes in {
-    from {
-        left: -100px;
-    }
-    to {
-        left: 0;
-    }
-}

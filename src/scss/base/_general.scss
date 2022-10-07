@@ -7,6 +7,10 @@
     scrollbar-color: #151515 #ffffff;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     &::-webkit-scrollbar {
         width: 12px;
@@ -37,4 +41,29 @@ a {
 .h2 {
     font-weight: 400;
     font-size: 32px;
+}
+
+.link {
+    position: relative;
+    &::after {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        content: '';
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background: url('../img/link-icon.svg') center no-repeat;
+    }
+}
+
+.invisible {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.visible {
+    opacity: 1;
+    transition: opacity 1.5s, transform 1.5s ease;
+    transform: translateY(0%);
 }

@@ -1,0 +1,14 @@
+.contacts {
+    margin: 80px 0;
+    font-size: 18px;
+    &__heading {
+        margin-bottom: 32px;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 24px;
+        padding-left: 20px;
+    }
+}

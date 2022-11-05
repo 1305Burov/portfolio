@@ -439,7 +439,9 @@ a {
 }
 
 .projects-list__hidden {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
 }
 
 .contacts {
